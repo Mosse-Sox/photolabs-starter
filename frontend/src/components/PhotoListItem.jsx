@@ -8,6 +8,7 @@ const PhotoListItem = (props) => {
 
   return (
     <li className="photo-list__item">
+      <PhotoFavButton />
       <img src={imageSource} className="photo-list__image"></img>
       <div className="photo-list__user-details">
         <img src={profile} className="photo-list__user-profile"></img>
@@ -18,7 +19,6 @@ const PhotoListItem = (props) => {
           </span>
         </div>
       </div>
-      <PhotoFavButton />
     </li>
   );
 };
