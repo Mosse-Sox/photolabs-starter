@@ -19,6 +19,16 @@ const sampleDataForTopicList = [
     slug: "topic-3",
     title: "People",
   },
+  {
+    id: "4",
+    slug: "topic-3",
+    title: "Food",
+  },
+  {
+    id: "5",
+    slug: "topic-3",
+    title: "Art",
+  },
 ];
 
 const TopicList = () => {
