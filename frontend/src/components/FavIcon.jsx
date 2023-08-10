@@ -1,16 +1,7 @@
-import { React, useState } from "react";
+import { React } from "react";
 
-const FavIcon = ({ displayAlert }) => {
-  const [like, setLike] = useState(false);
-
-  const likePhoto = () => {
-    if (like) {
-      setLike(false);
-    } else {
-      setLike(true);
-    }
-    console.log(like);
-  };
+const FavIcon = ({ displayAlert, like, likePhoto }) => {
+  
 
   return (
     <svg

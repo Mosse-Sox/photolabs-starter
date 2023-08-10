@@ -8,7 +8,7 @@ const PhotoListItem = (props) => {
 
   return (
     <li className="photo-list__item">
-      <PhotoFavButton />
+      <PhotoFavButton like={props.like} likePhoto={props.likePhoto}/>
       <img src={imageSource} className="photo-list__image"></img>
       <div className="photo-list__user-details">
         <img src={profile} className="photo-list__user-profile"></img>

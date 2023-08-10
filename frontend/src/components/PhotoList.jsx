@@ -5,7 +5,7 @@ import photos from "../mocks/photos";
 
 
 
-const PhotoList = () => {
+const PhotoList = (props) => {
   const photoList = photos.map((photo) => {
     const {id, location, urls, user} = photo;
     const photoObj = {
@@ -14,7 +14,7 @@ const PhotoList = () => {
       username: user.name,
       profile: user.profile
     };
-    return (<PhotoListItem photoItem={photoObj} key={id}/>);
+    return (<PhotoListItem photoItem={photoObj} key={id} like={props.like} likePhoto={props.likePhoto}/>);
   });
 
 

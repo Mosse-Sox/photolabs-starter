@@ -4,11 +4,11 @@ import TopNavigation from "../components/TopNavigationBar";
 
 import '../styles/HomeRoute.scss';
 
-const HomeRoute = () => {
+const HomeRoute = (props) => {
   return (
     <div className="home-route">
-      <TopNavigation />
-      <PhotoList />
+      <TopNavigation like={props.like} likePhoto={props.likePhoto}/>
+      <PhotoList like={props.like} likePhoto={props.likePhoto}/>
     </div>
   );
 };
