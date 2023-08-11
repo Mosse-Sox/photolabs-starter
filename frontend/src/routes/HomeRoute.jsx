@@ -1,14 +1,23 @@
-import React from 'react';
+import { React, useState } from "react";
 import PhotoList from "../components/PhotoList";
 import TopNavigation from "../components/TopNavigationBar";
 
-import '../styles/HomeRoute.scss';
+import "../styles/HomeRoute.scss";
 
-const HomeRoute = (props) => {
+const HomeRoute = () => {
+  const [like, setLike] = useState({});
+
+  const likePhoto = (photoId) => {
+    setLike((prevLikes) => ({
+      ...prevLikes,
+      [photoId]: !prevLikes[photoId] || false,
+    }));
+  };
+
   return (
     <div className="home-route">
-      <TopNavigation like={props.like} likePhoto={props.likePhoto}/>
-      <PhotoList like={props.like} likePhoto={props.likePhoto}/>
+      <TopNavigation like={like} />
+      <PhotoList like={like} likePhoto={likePhoto} />
     </div>
   );
 };

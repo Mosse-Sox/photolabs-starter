@@ -7,7 +7,7 @@ const PhotoFavButton = (props) => {
   return (
     <div className="photo-list__fav-icon">
       <div className="photo-list__fav-icon-svg">
-        <FavIcon like={props.like} likePhoto={props.likePhoto}/>
+        <FavIcon like={props.isLiked} likePhoto={() => props.likePhoto(props.photoId)}/>
       </div>
     </div>
   );

@@ -12,7 +12,8 @@ const PhotoList = (props) => {
       location,
       imageSource: urls.regular,
       username: user.name,
-      profile: user.profile
+      profile: user.profile,
+      id
     };
     return (<PhotoListItem photoItem={photoObj} key={id} like={props.like} likePhoto={props.likePhoto}/>);
   });
