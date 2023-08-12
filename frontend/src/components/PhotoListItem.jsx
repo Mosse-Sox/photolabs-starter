@@ -13,7 +13,7 @@ const PhotoListItem = (props) => {
             ? "photo-details-modal__image"
             : "photo-list__item"
       }`}
-      onClick={props.isClicked}
+      
     >
       <PhotoFavButton
         isLiked={props.like[id] || false}
@@ -29,6 +29,7 @@ const PhotoListItem = (props) => {
               ? "photo-details-modal__image"
               : "photo-details-modal__images"
         }`}
+        onClick={props.isClicked}
         id={`${props.mainPhoto ? "main-photo" : ""}`}
       ></img>
 
