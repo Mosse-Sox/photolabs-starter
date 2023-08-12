@@ -2,25 +2,17 @@ import { React, useState } from "react";
 import HomeRoute from "routes/HomeRoute";
 import PhotoDetailsModal from "routes/PhotoDetailsModal";
 import useLike from "hooks/useLike";
+import useModal from "hooks/useModal";
 
 import "./App.scss";
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
-  const [clicked, setClicked] = useState(false);
-  const [modalPhotos, setModalPhotos] = useState({});
+  const { clicked, isClicked, unClicked, modalPhotos } = useModal();
   const { like, toggleLike } = useLike();
 
 
-  const isClicked = (photo, similarPhotos) => {
-    setClicked(true);
-    const similarPhotoObjs = Object.values(similarPhotos);
-    setModalPhotos({photo, similarPhotos: similarPhotoObjs});
-  };
-
-  const unClicked = () => {
-    setClicked(false);
-  };
+  
 
   return (
     <div className="App">
