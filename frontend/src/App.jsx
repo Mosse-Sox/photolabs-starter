@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import HomeRoute from "routes/HomeRoute";
 import PhotoDetailsModal from "routes/PhotoDetailsModal";
+import useLike from "hooks/useLike";
 
 import "./App.scss";
 
@@ -8,14 +9,7 @@ import "./App.scss";
 const App = () => {
   const [clicked, setClicked] = useState(false);
   const [modalPhotos, setModalPhotos] = useState({});
-  const [like, setLike] = useState({});
-
-  const likePhoto = (photoId) => {
-    setLike((prevLikes) => ({
-      ...prevLikes,
-      [photoId]: !prevLikes[photoId] || false,
-    }));
-  };
+  const { like, toggleLike } = useLike();
 
 
   const isClicked = (photo, similarPhotos) => {
@@ -30,8 +24,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <HomeRoute isClicked={isClicked} like={like} likePhoto={likePhoto}/>
-      {clicked && <PhotoDetailsModal unClicked={unClicked} modalPhotos={modalPhotos} like={like} likePhoto={likePhoto}/>}
+      <HomeRoute isClicked={isClicked} like={like} likePhoto={toggleLike}/>
+      {clicked && <PhotoDetailsModal unClicked={unClicked} modalPhotos={modalPhotos} like={like} likePhoto={toggleLike}/>}
     </div>
   );
 };
