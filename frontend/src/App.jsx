@@ -8,8 +8,9 @@ import "./App.scss";
 const App = () => {
   const [clicked, setClicked] = useState(false);
 
-  const isClicked = () => {
+  const isClicked = (photoUrl, similarPhotos) => {
     setClicked(true);
+    console.log(photoUrl, similarPhotos);
   };
 
   const unClicked = () => {
