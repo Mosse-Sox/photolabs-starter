@@ -15,7 +15,7 @@ const PhotoList = (props) => {
       profile: user.profile,
       id
     };
-    return (<PhotoListItem photoItem={photoObj} key={id} like={props.like} likePhoto={props.likePhoto}/>);
+    return (<PhotoListItem photoItem={photoObj} key={id} like={props.like} likePhoto={props.likePhoto} isClicked={props.isClicked}/>);
   });
 
 

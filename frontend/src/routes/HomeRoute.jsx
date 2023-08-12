@@ -4,7 +4,7 @@ import TopNavigation from "../components/TopNavigationBar";
 
 import "../styles/HomeRoute.scss";
 
-const HomeRoute = () => {
+const HomeRoute = (props) => {
   const [like, setLike] = useState({});
 
   const likePhoto = (photoId) => {
@@ -17,7 +17,7 @@ const HomeRoute = () => {
   return (
     <div className="home-route">
       <TopNavigation like={like} />
-      <PhotoList like={like} likePhoto={likePhoto} />
+      <PhotoList like={like} likePhoto={likePhoto} isClicked={props.isClicked}/>
     </div>
   );
 };
