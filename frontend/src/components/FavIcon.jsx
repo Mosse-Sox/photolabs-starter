@@ -5,8 +5,8 @@ const FavIcon = ({ displayAlert, like, likePhoto }) => {
 
   return (
     <svg
-      width="20"
-      height="17"
+      width="24"
+      height="22"
       viewBox="0 0 24 19"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

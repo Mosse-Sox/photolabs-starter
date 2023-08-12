@@ -7,7 +7,11 @@ const PhotoListItem = (props) => {
   return (
     <li
       className={`${
-        !props.modal ? "photo-list__item" : props.mainPhoto ? "photo-details-modal__image" : "photo-details-modal__images"
+        !props.modal
+          ? "photo-list__item"
+          : props.mainPhoto
+            ? "photo-details-modal__image"
+            : "photo-list__item"
       }`}
       onClick={props.isClicked}
     >
@@ -19,21 +23,24 @@ const PhotoListItem = (props) => {
       <img
         src={urls.regular}
         className={`${
-          !props.modal ? "photo-list__image" : props.mainPhoto ? "photo-details-modal__image" : "photo-details-modal__images"
+          !props.modal
+            ? "photo-list__image"
+            : props.mainPhoto
+              ? "photo-details-modal__image"
+              : "photo-details-modal__images"
         }`}
         id={`${props.mainPhoto ? "main-photo" : ""}`}
       ></img>
-      {!props.modal && (
-        <div className="photo-list__user-details">
-          <img src={user.profile} className="photo-list__user-profile"></img>
-          <div className="photo-list__user-info">
-            <span>{user.name}</span>
-            <span className="photo-list__user-location">
-              {location.city}, {location.country}
-            </span>
-          </div>
+
+      <div className="photo-list__user-details">
+        <img src={user.profile} className="photo-list__user-profile"></img>
+        <div className="photo-list__user-info">
+          <span>{user.name}</span>
+          <span className="photo-list__user-location">
+            {location.city}, {location.country}
+          </span>
         </div>
-      )}
+      </div>
     </li>
   );
 };
