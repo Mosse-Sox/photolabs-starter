@@ -1,31 +1,34 @@
 import React from "react";
 import PhotoListItem from "./PhotoListItem";
 import "../styles/PhotoList.scss";
-import photos from "../mocks/photos";
 
 const PhotoList = (props) => {
-  const photoList = photos.map((photo) => {
+  const photoList = props.photos.map((photo) => {
     const { id, location, urls, user, similarPhotos } = photo;
     const photoObj = {
       location,
-      imageSource: urls.regular,
-      username: user.name,
-      profile: user.profile,
+      urls: { regular: urls.regular, full: urls.full },
+      user: {
+        name: user.name,
+        profile: user.profile,
+      },
       id,
-      similarPhotos,
     };
+
+    
     return (
       <PhotoListItem
         photoItem={photoObj}
         key={id}
         like={props.like}
         likePhoto={props.likePhoto}
-        isClicked={() => props.isClicked(urls.regular, similarPhotos)}
+        isClicked={() => props.isClicked(photoObj, similarPhotos)}
+        modal={props.modal}
       />
     );
   });
 
-  return <ul className="photo-list">{photoList}</ul>;
+  return <ul className={!props.modal ? "photo-list" : "similar-photos"}>{photoList}</ul>;
 };
 
 export default PhotoList;

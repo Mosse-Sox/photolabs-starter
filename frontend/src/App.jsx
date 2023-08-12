@@ -7,10 +7,21 @@ import "./App.scss";
 // Note: Rendering a single component to build components in isolation
 const App = () => {
   const [clicked, setClicked] = useState(false);
+  const [modalPhotos, setModalPhotos] = useState({});
+  const [like, setLike] = useState({});
 
-  const isClicked = (photoUrl, similarPhotos) => {
+  const likePhoto = (photoId) => {
+    setLike((prevLikes) => ({
+      ...prevLikes,
+      [photoId]: !prevLikes[photoId] || false,
+    }));
+  };
+
+
+  const isClicked = (photo, similarPhotos) => {
     setClicked(true);
-    console.log(photoUrl, similarPhotos);
+    const similarPhotoObjs = Object.values(similarPhotos);
+    setModalPhotos({photo, similarPhotos: similarPhotoObjs});
   };
 
   const unClicked = () => {
@@ -19,8 +30,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <HomeRoute isClicked={isClicked} />
-      {clicked && <PhotoDetailsModal unClicked={unClicked} />}
+      <HomeRoute isClicked={isClicked} like={like} likePhoto={likePhoto}/>
+      {clicked && <PhotoDetailsModal unClicked={unClicked} modalPhotos={modalPhotos} like={like} likePhoto={likePhoto}/>}
     </div>
   );
 };
