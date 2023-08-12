@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 import HomeRoute from "routes/HomeRoute";
 import PhotoDetailsModal from "routes/PhotoDetailsModal";
 import useLike from "hooks/useLike";
@@ -11,9 +11,6 @@ const App = () => {
   const { clicked, isClicked, unClicked, modalPhotos } = useModal();
   const { like, toggleLike } = useLike();
 
-
-  
-
   return (
     <div className="App">
       <HomeRoute isClicked={isClicked} like={like} likePhoto={toggleLike}/>
@@ -23,3 +20,4 @@ const App = () => {
 };
 
 export default App;
+ 
