@@ -1,7 +1,24 @@
-# react-photolabs
-The PhotoLabs project for the Web Development React course programming.
-
 # Photolabs
+### a simpler instagram clone, users can look at photos by topics and like photos all over the app.
+  - Frontend 
+      - React
+      - Sass
+  - Backend
+      - Node.js
+      - Express
+      - PSQL
+
+
+## Preview 
+
+- Homepage
+![homepage]()
+- Photos By Topic
+![photos by topic]()
+- Like Anywhere In The App
+![like anywhere in the app]()
+- Sidepeek Modal View
+![sidepeek modal view]()
 
 ## Setup
 
