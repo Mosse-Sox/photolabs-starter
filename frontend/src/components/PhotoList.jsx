@@ -4,7 +4,9 @@ import "../styles/PhotoList.scss";
 
 const PhotoList = (props) => {
   const photoList = props.photos.map((photo) => {
-    const { id, location, urls, user, similarPhotos } = photo;
+    // eslint-disable-next-line camelcase
+    const { id, location, urls, user, similar_photos } = photo;
+    console.log(similar_photos);
     const photoObj = {
       location,
       urls: { regular: urls.regular, full: urls.full },
@@ -22,7 +24,7 @@ const PhotoList = (props) => {
         key={id}
         like={props.like}
         likePhoto={props.likePhoto}
-        isClicked={() => props.isClicked(photoObj, similarPhotos)}
+        isClicked={() => props.isClicked(photoObj, similar_photos)}
         modal={props.modal}
       />
     );

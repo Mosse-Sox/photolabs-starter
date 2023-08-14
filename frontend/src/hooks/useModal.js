@@ -6,9 +6,9 @@ const ACTIONS = {
   CLOSE_MODAL: "CLOSE_MODAL",
 };
 
-// Reducer function
 const modalReducer = (state, action) => {
   let similarPhotoObjs;
+  console.log(action);
   switch (action.type) {
   case ACTIONS.OPEN_MODAL:
     similarPhotoObjs = Object.values(action.similarPhotos);

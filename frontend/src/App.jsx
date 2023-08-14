@@ -13,11 +13,17 @@ const App = () => {
 
   return (
     <div className="App">
-      <HomeRoute isClicked={isClicked} like={like} likePhoto={toggleLike}/>
-      {clicked && <PhotoDetailsModal unClicked={unClicked} modalPhotos={modalPhotos} like={like} likePhoto={toggleLike}/>}
+      <HomeRoute isClicked={isClicked} like={like} likePhoto={toggleLike} />
+      {clicked && (
+        <PhotoDetailsModal
+          unClicked={unClicked}
+          modalPhotos={modalPhotos}
+          like={like}
+          likePhoto={toggleLike}
+        />
+      )}
     </div>
   );
 };
 
 export default App;
- 
