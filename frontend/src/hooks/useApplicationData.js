@@ -16,9 +16,23 @@ const useApplicationData = () => {
     );
   }, []);
 
+  const getPhotosByTopics = (topicId) => {
+    fetch(`http://localhost:8001/api/topics/photos/${topicId}`).then((res) =>
+      res.json().then((data) => setPhotos([...data]))
+    );
+  };
+
+  const returnToHome = () => {
+    fetch("http://localhost:8001/api/photos").then((res) =>
+      res.json().then((data) => setPhotos([...data]))
+    );
+  };
+
   return {
     photos,
-    topics
+    topics,
+    getPhotosByTopics,
+    returnToHome
   };
 };
 

@@ -5,12 +5,11 @@ import useApplicationData from "../hooks/useApplicationData";
 import "../styles/HomeRoute.scss";
 
 const HomeRoute = (props) => {
-  const { photos, topics } = useApplicationData();
-  console.log(photos);
+  const { photos, topics, getPhotosByTopics, returnToHome } = useApplicationData();
 
   return (
     <div className="home-route">
-      <TopNavigation like={props.like} topics={topics}/>
+      <TopNavigation like={props.like} topics={topics} getPhotosByTopics={getPhotosByTopics} returnToHome={returnToHome}/>
       <PhotoList like={props.like} likePhoto={props.likePhoto} isClicked={props.isClicked} photos={photos}/>
     </div>
   );

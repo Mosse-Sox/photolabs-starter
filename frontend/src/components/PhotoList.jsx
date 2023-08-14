@@ -6,7 +6,6 @@ const PhotoList = (props) => {
   const photoList = props.photos.map((photo) => {
     // eslint-disable-next-line camelcase
     const { id, location, urls, user, similar_photos } = photo;
-    console.log(similar_photos);
     const photoObj = {
       location,
       urls: { regular: urls.regular, full: urls.full },
