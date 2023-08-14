@@ -25,7 +25,6 @@ const PhotoList = (props) => {
       id,
     };
 
-    
     return (
       <PhotoListItem
         photoItem={photoObj}

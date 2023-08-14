@@ -10,7 +10,6 @@ import "../styles/TopicListItem.scss";
  * @returns the jsx representation of the TopicListItem component
  */
 const TopicListItem = (props) => {
-  
   return (
     <div className="topic-list__item">
       <span onClick={props.getPhotosByTopics}>{props.topicTitle}</span>

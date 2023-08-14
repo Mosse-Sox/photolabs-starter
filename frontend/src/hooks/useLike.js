@@ -9,16 +9,19 @@ const actionTypes = {
 // Reducer function - returns like state based on actions
 const likeReducer = (state, action) => {
   let newState;
+
   switch (action.type) {
   case actionTypes.ADD_LIKE:
     return {
       ...state,
       [action.photoId]: true,
     };
+
   case actionTypes.REMOVE_LIKE:
     newState = { ...state };
     delete newState[action.photoId];
     return newState;
+    
   default:
     return state;
   }

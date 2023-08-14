@@ -9,7 +9,7 @@ const ACTIONS = {
 // Reducer function - returns modal state based on action
 const modalReducer = (state, action) => {
   let similarPhotoObjs;
-  console.log(action);
+
   switch (action.type) {
   case ACTIONS.OPEN_MODAL:
     similarPhotoObjs = Object.values(action.similarPhotos);
@@ -17,11 +17,13 @@ const modalReducer = (state, action) => {
       clicked: true,
       modalPhotos: { photo: action.photo, similarPhotos: similarPhotoObjs },
     };
+
   case ACTIONS.CLOSE_MODAL:
     return {
       clicked: false,
       modalPhotos: {},
     };
+
   default:
     return state;
   }

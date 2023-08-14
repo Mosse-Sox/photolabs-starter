@@ -33,7 +33,9 @@ const PhotoDetailsModal = (props) => {
           modal={modal}
         />
       </ul>
+
       <hr/>
+      
       <div>
         <div className="photo-details-modal__header">
           <span>Similar Photos</span>

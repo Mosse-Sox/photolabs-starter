@@ -7,7 +7,6 @@ import { React } from "react";
  * @returns the jsx representation of the FavIcon component
  */
 const FavIcon = ({ displayAlert, like, likePhoto }) => {
-  
   return (
     <svg
       width="24"

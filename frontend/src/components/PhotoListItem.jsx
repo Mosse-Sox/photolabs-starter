@@ -12,6 +12,7 @@ import "../styles/PhotoListItem.scss";
  */
 const PhotoListItem = (props) => {
   const { location, urls, user, id } = props.photoItem;
+  
   return (
     <li
       className={`${
