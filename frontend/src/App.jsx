@@ -8,17 +8,17 @@ import "./App.scss";
 
 const App = () => {
   const { clicked, isClicked, unClicked, modalPhotos } = useModal();
-  const { like, toggleLike } = useLike();
+  const { like, likePhoto } = useLike();
 
   return (
     <div className="App">
-      <HomeRoute isClicked={isClicked} like={like} likePhoto={toggleLike} />
+      <HomeRoute isClicked={isClicked} like={like} likePhoto={likePhoto} />
       {clicked && (
         <PhotoDetailsModal
           unClicked={unClicked}
           modalPhotos={modalPhotos}
           like={like}
-          likePhoto={toggleLike}
+          likePhoto={likePhoto}
         />
       )}
     </div>

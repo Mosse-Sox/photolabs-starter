@@ -21,7 +21,7 @@ const likeReducer = (state, action) => {
     newState = { ...state };
     delete newState[action.photoId];
     return newState;
-    
+
   default:
     return state;
   }
@@ -40,7 +40,7 @@ const useLike = () => {
    * and removing a like from the like state object
    * @param {Integer} photoId the id of the photo that is liked or unliked
    */
-  const toggleLike = (photoId) => {
+  const likePhoto = (photoId) => {
     if (like[photoId]) {
       dispatch({ type: actionTypes.REMOVE_LIKE, photoId });
     } else {
@@ -50,7 +50,7 @@ const useLike = () => {
 
   return {
     like,
-    toggleLike
+    likePhoto
   };
 };
 
