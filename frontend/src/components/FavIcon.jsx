@@ -3,7 +3,7 @@ import { React } from "react";
 /**
  * this is the component responsible for rendering the heart icon for likes
  * @param {props} - displayAlert a boolean value representing if there is a new like, like state object,
- * likePhoto function (alias for toggleLike)
+ * likePhoto function
  * @returns the jsx representation of the FavIcon component
  */
 const FavIcon = ({ displayAlert, like, likePhoto }) => {

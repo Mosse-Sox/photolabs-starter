@@ -6,7 +6,7 @@ import "../styles/PhotoFavButton.scss";
 /**
  * this is the component responsible for rendering the PhotoFavButton component,
  * the button on all the photos
- * @param {*} props - like state object, likePhoto function (alais for toggleLike)
+ * @param {*} props - like state object, likePhoto function
  * @returns the jsx represntation of the PhotoFavButton component
  */
 const PhotoFavButton = (props) => {
