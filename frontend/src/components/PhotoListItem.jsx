@@ -2,6 +2,14 @@ import React from "react";
 import PhotoFavButton from "./PhotoFavButton";
 import "../styles/PhotoListItem.scss";
 
+/**
+ * this is the component responsible for rendering a single photo,
+ * this is used in PhotoList or in PhotoDetailModal for rendering the main/clicked on photo
+ * @param {Object} props - photoObject, like state object, likePhoto function (alias for toggleLike)
+ * modal (boolean indiciating this render is for modals), mainPhoto (a boolean indicating this is the main/clicked on photo
+ * in the modal)
+ * @returns the jsx representation of the PhotoListItem component
+ */
 const PhotoListItem = (props) => {
   const { location, urls, user, id } = props.photoItem;
   return (

@@ -6,6 +6,7 @@ const ACTIONS = {
   CLOSE_MODAL: "CLOSE_MODAL",
 };
 
+// Reducer function - returns modal state based on action
 const modalReducer = (state, action) => {
   let similarPhotoObjs;
   console.log(action);
@@ -26,6 +27,13 @@ const modalReducer = (state, action) => {
   }
 };
 
+/**
+ * useModal is a custom hook that manages the state for the modal in
+ * this app. useModal manages two states, clicked: indicating if a photo has been clicked or not, and
+ * modalPhotos: the photos that need to be loaded in the modal based on the photo that was clicked.
+ * @returns an object {clicked: true/false, modalPhotos: { photo: photoObject, similarPhotos: [array of similar photo objects]},
+ * isClicked: function(), unClicked: function()}
+ */
 const useModal = () => {
   const initialState = {
     clicked: false,
@@ -34,6 +42,12 @@ const useModal = () => {
 
   const [state, dispatch] = useReducer(modalReducer, initialState);
 
+  /**
+   * This function opens the sidepeek/modal and sets the modalPhotos state
+   * object
+   * @param {Object} photo photo object - this is the photo that was clicked on (ei. main photo)
+   * @param {Array} similarPhotos this is an array of similar photo objects from the photo that was clicked on
+   */
   const isClicked = (photo, similarPhotos) => {
     dispatch({
       type: ACTIONS.OPEN_MODAL,
@@ -42,6 +56,9 @@ const useModal = () => {
     });
   };
 
+  /**
+   * this function closes the sidepeek/modal when a user clicks the x button on it
+   */
   const unClicked = () => {
     dispatch({
       type: ACTIONS.CLOSE_MODAL,

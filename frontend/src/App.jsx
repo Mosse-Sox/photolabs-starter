@@ -6,7 +6,6 @@ import useModal from "hooks/useModal";
 
 import "./App.scss";
 
-// Note: Rendering a single component to build components in isolation
 const App = () => {
   const { clicked, isClicked, unClicked, modalPhotos } = useModal();
   const { like, toggleLike } = useLike();

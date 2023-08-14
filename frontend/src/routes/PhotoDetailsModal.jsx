@@ -5,6 +5,13 @@ import closeSymbol from "../assets/closeSymbol.svg";
 import PhotoList from "../components/PhotoList";
 import PhotoListItem from "../components/PhotoListItem";
 
+/**
+ * PhotoDetailsModal is the component for the sidepeek when a user clicks on a photo and is
+ * only rendered when a photo has been clicked on.
+ * @param {Object} props the props for this function are the modalPhotos from state, which is an object that
+ * holds the clicked on photo as an object, and its similar photos as an array
+ * @returns the jsx representation of the PhotoDetailsModal component
+ */
 const PhotoDetailsModal = (props) => {
   const { photo, similarPhotos } = props.modalPhotos;
   const modal = true;
