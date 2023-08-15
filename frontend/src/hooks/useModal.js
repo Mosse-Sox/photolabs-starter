@@ -9,10 +9,14 @@ const ACTIONS = {
 // Reducer function - returns modal state based on action
 const modalReducer = (state, action) => {
   let similarPhotoObjs;
-
   switch (action.type) {
   case ACTIONS.OPEN_MODAL:
+    
     similarPhotoObjs = Object.values(action.similarPhotos);
+    if (similarPhotoObjs.length > 6) {
+      similarPhotoObjs = similarPhotoObjs.slice(0, 6);
+    }
+
     return {
       clicked: true,
       modalPhotos: { photo: action.photo, similarPhotos: similarPhotoObjs },

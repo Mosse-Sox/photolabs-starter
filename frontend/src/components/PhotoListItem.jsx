@@ -28,6 +28,7 @@ const PhotoListItem = (props) => {
         isLiked={props.like[id] || false}
         likePhoto={props.likePhoto}
         photoId={id}
+        modal={props.modal}
       />
       <img
         src={urls.regular}

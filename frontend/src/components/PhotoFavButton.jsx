@@ -11,7 +11,7 @@ import "../styles/PhotoFavButton.scss";
  */
 const PhotoFavButton = (props) => {
   return (
-    <div className="photo-list__fav-icon">
+    <div className={props.modal ? "photo-detail-modal__fav-button" : "photo-list__fav-icon"}>
       <div className="photo-list__fav-icon-svg">
         <FavIcon like={props.isLiked} likePhoto={() => props.likePhoto(props.photoId)}/>
       </div>
